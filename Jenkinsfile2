@@ -3,7 +3,7 @@ pipeline {
     label 'ecs'
   }
   tools {
-    maven "maven 3.8.6"
+    maven "mvn"
   }
   stages {
         stage('Clonar') {
