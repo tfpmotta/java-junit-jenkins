@@ -4,7 +4,7 @@ pipeline {
             // SonarQube
             SONAR_URL = 'http://internal-dev-tools-th-jenkins-alb-1090643772.us-east-1.elb.amazonaws.com:9000'
             SONAR_SERVER = 'sonarqubeserver'
-            SONAR_PROFILE = 'sonar-dev-teste'
+            SONAR_PROJECT = 'sonar-dev-teste'
   }
   stages{
     stage('SonarQube') {
