@@ -8,7 +8,7 @@ pipeline {
   stages {
         stage('Clonar') {
             steps {
-                sh 'curl http://gitdev.clarobrasil.mobi/devops/plataforma/devops-tools/maturity/pipe-para-testes.git'
+                sh 'ping gitdev.clarobrasil.mobi'
             }
         }
 
