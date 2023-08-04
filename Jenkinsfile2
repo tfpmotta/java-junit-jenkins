@@ -2,24 +2,30 @@ pipeline {
   agent {
     label 'ecs'
   }
-    stages {
+  stages {
+        stage('Instalar Maven') {
+            steps {
+                // Instala o Maven na versão desejada durante a execução da pipeline
+                tool name: 'Maven', type: 'maven'
+            }
+        }
+
         stage('Clonar') {
             steps {
-                // Clonar o repositório do projeto
                 git 'https://github.com/tfpmotta/java-junit-jenkins.git'
             }
         }
 
         stage('Compilar') {
             steps {
-                // Compilar o projeto usando o Maven
+                // O Maven agora está instalado e disponível para uso neste estágio
                 sh 'mvn compile'
             }
         }
 
         stage('Testar') {
             steps {
-                // Executar testes do projeto usando o Maven
+                // O Maven também está disponível neste estágio
                 sh 'mvn test'
             }
         }
