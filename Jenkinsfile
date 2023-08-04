@@ -8,7 +8,7 @@ pipeline {
   stages {
         stage('Clonar') {
             steps {
-                sh 'telnet gitdev.clarobrasil.mobi 443'
+                sh 'telnet gitdev.clarobrasil.mobi 22'
             }
         }
 
