@@ -1,0 +1,27 @@
+pipeline {
+  agent {
+    label 'ecs'
+  }
+    stages {
+        stage('Clonar') {
+            steps {
+                // Clonar o repositório do projeto
+                git 'https://github.com/tfpmotta/java-junit-jenkins.git'
+            }
+        }
+
+        stage('Compilar') {
+            steps {
+                // Compilar o projeto usando o Maven
+                sh 'mvn compile'
+            }
+        }
+
+        stage('Testar') {
+            steps {
+                // Executar testes do projeto usando o Maven
+                sh 'mvn test'
+            }
+        }
+    }
+}
