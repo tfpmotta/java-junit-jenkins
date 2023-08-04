@@ -8,7 +8,7 @@ pipeline {
   stages {
         stage('Clonar') {
             steps {
-                git 'https://gitdev.clarobrasil.mobi/CCoE/Portal/ccoe-front.git'
+                git 'https://github.com/tfpmotta/java-junit-jenkins.git'
             }
         }
 
