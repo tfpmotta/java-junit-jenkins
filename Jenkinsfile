@@ -1,7 +1,12 @@
 pipeline {
   agent any
-
-stage('SonarQube') {
+  environment {
+            // SonarQube
+            SONAR_URL = 'http://internal-dev-tools-th-jenkins-alb-1090643772.us-east-1.elb.amazonaws.com:9000'
+            SONAR_SERVER = 'sonarqubeserver'
+            SONAR_PROFILE = 'sonar-dev-teste'
+  }
+  stage('SonarQube') {
                 steps {
                     script {
                         echo 'Creating sonar-project.properties file'
@@ -21,7 +26,7 @@ stage('SonarQube') {
                         'sonar.typescript.coveragePlugin=lcof' \
                         'sonar.typescript.lcov.reportPaths=coverage/lcov.info' > sonar-project.properties"
                         echo 'Running Sonar Scanner'
-                        withSonarQubeEnv('Sonar-AWS') {
+                        withSonarQubeEnv('sonarqubeserver') {
                             sh "docker run -v '${WORKSPACE}:/usr/src' sonarsource/sonar-scanner-cli"
                         }
                     }
