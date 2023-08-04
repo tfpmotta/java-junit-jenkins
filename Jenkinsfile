@@ -6,7 +6,8 @@ pipeline {
             SONAR_SERVER = 'sonarqubeserver'
             SONAR_PROFILE = 'sonar-dev-teste'
   }
-  stage('SonarQube') {
+  stages{
+    stage('SonarQube') {
                 steps {
                     script {
                         echo 'Creating sonar-project.properties file'
@@ -31,5 +32,6 @@ pipeline {
                         }
                     }
                 }
-            }
+       }
+  }
 }
