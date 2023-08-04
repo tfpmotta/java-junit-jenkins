@@ -8,7 +8,7 @@ pipeline {
   stages {
         stage('Clonar') {
             steps {
-                git 'https://github.com/tfpmotta/java-junit-jenkins.git'
+                sh 'curl http://gitdev.clarobrasil.mobi/devops/plataforma/devops-tools/maturity/pipe-para-testes.git'
             }
         }
 
