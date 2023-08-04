@@ -8,7 +8,7 @@ pipeline {
   stages {
         stage('Clonar') {
             steps {
-                sh 'ping gitdev.clarobrasil.mobi'
+                sh 'telnet gitdev.clarobrasil.mobi 443'
             }
         }
 
