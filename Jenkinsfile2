@@ -2,14 +2,10 @@ pipeline {
   agent {
     label 'ecs'
   }
+  tools {
+    maven "Maven 3.8.6"
+  }
   stages {
-        stage('Instalar Maven') {
-            steps {
-                // Instala o Maven na versão desejada durante a execução da pipeline
-                tool name: 'Maven', type: 'maven'
-            }
-        }
-
         stage('Clonar') {
             steps {
                 git 'https://github.com/tfpmotta/java-junit-jenkins.git'
