@@ -3,7 +3,9 @@ pipeline {
     label 'ecs'
   }
   tools {
-    maven "mvn"
+        maven "mvn"
+        // Adicione a instalação do Telnet
+        tool 'Telnet', 'telnet-1:0.17-83.amzn2023.0.2.x86_64'
   }
   stages {
         stage('Clonar') {
